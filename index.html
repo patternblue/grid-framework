@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Odin Project: Design your Own Grid-Based Framework</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/scss/main.css">
+</head>
+<body>
+
+<div id="wrap">
+	<header>
+		<div id="banner">
+			<img src="img/Logo-sometimes-Pixelmator-577.png" alt="waitbutwhy logo">
+		</div>
+		<nav>
+			<ul class="nav-links">
+				<li><a href="#">home</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">archive</a></li>
+				<li><a href="#">minis</a></li>
+				<li><a href="#">the shed</a></li>
+				<li><a href="#">dinner table</a></li>
+				<li><a href="#">store</a></li>
+				<li><a href="#">support wbw</a></li>
+			</ul>
+			<form>
+				<input type="text" value="Search">
+			</form>
+		</nav>
+	</header>
+
+	<div id="main">
+		<div id="articles">
+			<p class="notifications">
+				We have a Patreon now! If you're interested in supporting WBW, check it out.
+			</p>
+			<p class="notifications">
+				ALSO: The Elon Musk post series is finally <a href="#">available as an ebook!</a>
+			</p>
+			<div id="main-article">
+				<h1>The Jelly Bean Problem</h1>
+				<img src="img/Feature-smaller-stump-1-782x530.jpg" alt="jelly beans on tree trunk">
+				<p>
+					One jelly bean will kill you. The other is harmless. And you have a decision to make. ... <a href="#">Read More</a>
+				</p>
+				<div class="social">
+					<ul>
+						<li class="comment"><a href="#">668</a></li>
+						<li class="tweet"><a href="#">192</a></li>
+						<li class="google"><a href="#">234</a></li>
+						<li class="like"><a href="#">57K</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="latest-posts">
+				<h3>Latest Posts</h3>
+				<ul>
+					<li class="article">
+						<img src="img/Renaissance-F-1-345x234.jpg" alt="horizontal timeline">
+						<h2><a href="#">Horizontal History</a></h2>
+						<!-- <a href="#"><h2>Horizontal History</h2></a> -->
+						<p>Looking at history from a whole new direction ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Tail-End-F-345x234.png" alt="tail end pic">
+						<h2><a href="#">The Tail End</a></h2>
+						<p>No matter what your age, you may, without realizing it, be enjoying the very last chapter of the relationships that matter most to you. Make it count. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Line-of-cooks-FEATURE-345x234.jpg" alt="line of cooks, one chef">
+						<h2><a href="#">The Cook and the Chef: Musk’s Secret Sauce</a></h2>
+						<p>The critical piece of wisdom we all need to take away from this series. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/SpaceX-F-345x234.jpg" alt="spaceX ships to Mars">
+						<h2><a href="#">How (and Why) SpaceX Will Colonize Mars</a></h2>
+						<p>One of life’s great leaps may be just around the corner. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/F-345x234.png" alt="panic monster in car">
+						<h2><a href="#">Why I’m Always Late</a></h2>
+						<p>There’s not really any other explanation—chronically late people are actually insane. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Renaissance-F-1-345x234.jpg" alt="horizontal timeline">
+						<h2><a href="#">Horizontal History</a></h2>
+						<p>Looking at history from a whole new direction ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Tail-End-F-345x234.png" alt="tail end pic">
+						<h2><a href="#">The Tail End</a></h2>
+						<p>No matter what your age, you may, without realizing it, be enjoying the very last chapter of the relationships that matter most to you. Make it count. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Line-of-cooks-FEATURE-345x234.jpg" alt="line of cooks, one chef">
+						<h2><a href="#">The Cook and the Chef: Musk’s Secret Sauce</a></h2>
+						<p>The critical piece of wisdom we all need to take away from this series. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/SpaceX-F-345x234.jpg" alt="spaceX ships to Mars">
+						<h2><a href="#">How (and Why) SpaceX Will Colonize Mars</a></h2>
+						<p>One of life’s great leaps may be just around the corner. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/F-345x234.png" alt="panic monster in car">
+						<h2><a href="#">Why I’m Always Late</a></h2>
+						<p>There’s not really any other explanation—chronically late people are actually insane. ... <a href="#">Read More</a></p>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="tweet"><a href="#">192</a></li>
+								<li class="google"><a href="#">234</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div> <!-- /#latest-posts -->
+			<div id="previous-posts">
+				<ul>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/Feature-103x70.jpg" alt="stick man looks in God in a Box">
+						<a href="#">The AI Revolution: Our Immortality or Extinction</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="article">
+						<img src="img/G1-103x70.jpg" alt="human progress graph">
+						<a href="#">The AI Revolution: The Road to Superintelligence</a>
+						<div class="social">
+							<ul>
+								<li class="comment"><a href="#">668</a></li>
+								<li class="like"><a href="#">57K</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<button>Archive</button>
+				<div id="page-nav">
+					<button>1</button>
+					<button>2</button>
+					<button>Next >></button>
+				</div>
+			</div> <!-- /#previous-posts -->
+		</div> <!-- /#articles -->
+		<div id="sidebar">
+			<div id="subscribe">
+				<p>Join 317,261 other humans and have new posts emailed to you</p>
+				<form>
+					<input type="email" value="Email Address">
+					<input type="submit">
+				</form>
+			</div>
+			<div class="follow">
+				<p>Follow us using these special men</p>
+				<img src="img/patreon-e1443809097193-2.png" alt="patreon">
+			</div>
+			<div class="store">
+				<img src="img/store_big-e1443808897651.png" alt="wbw store">
+			</div>
+			<div id="random-post">
+				<img src="img/random_posts.png" alt="random post button">
+			</div>
+			<div id="popular-posts">
+				<h3>Popular Posts</h3>
+				<ul>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/Night-FEATURE-1-white-head-103x70.png" alt="night white head">
+						<div class="post-details">
+							<a href="#">The Fermi Paradox</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img src="img/FEATURE6-103x70.png" alt="procrastinator's brain">
+						<div class="post-details">
+							<a href="#">Why Procrastinators Procrastinate</a>
+							<div class="social">
+								<ul>
+									<li class="comment"><a href="#">668</a></li>
+									<li class="like"><a href="#">57K</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<button>Full Archive</button>
+			</div> <!-- /#popular-posts -->
+			<div class="follow">
+				<p>Follow us using these special men</p>
+				<img src="img/patreon-e1443809097193-2.png" alt="patreon">
+			</div>
+			<div class="store">
+				<img src="img/store_big-e1443808897651.png" alt="wbw store">
+			</div>
+		</div> <!-- /#sidebar -->
+	</div> <!-- /#main -->
+</div> <!-- /#wrap -->
+<footer>
+	<div id="footer-nav">
+		<ul>
+			<li><a href="#">Contact</a></li>
+			<li class="middle">
+				<a href="#">© WaitButWhy 2016</a>
+				<a href="#">Privacy Policy</a>
+			</li>
+			<li><a href="#">Partner With Us</a></li>
+			<li><a href="#">Turtle</a></li>
+		</ul>
+	</div>
+</footer>
+
+
+</body>
+</html>

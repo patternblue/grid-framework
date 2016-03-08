@@ -1,0 +1,96 @@
+@import 'modules/reset';
+@import 'mixins/clearfix';
+@import 'modules/box-sizing';
+@import 'mixins/bottom-footer';
+/*@import 'vendors/susy';*/
+
+/*comment this out if you do not want red border markers*/
+@import 'modules/red-borders';
+
+@import 'mixins/grid';
+
+/*variables*/
+$span: 3;
+$cols: 12;
+$gutterPercentage: 0;
+/*footer*/
+$footerHeight: 100px;
+
+body{
+	height: 100%;
+}
+#wrap{
+	width: 1120px;
+	margin: 0 auto;
+}
+header,
+#main{
+	width: 100%;
+}
+#banner{
+	@extend header;
+}
+
+nav,
+#footer-nav{
+	@include clearfix;
+}
+#articles,
+#latest-posts ul,
+#previous-posts ul{
+	@include clearfix;	
+}
+nav{
+	width: 100%;
+	form{
+		@include grid-col(3, $cols, $gutterPercentage);
+	}
+	ul{
+		li{
+			display: inline-block;
+		}
+	}
+
+}
+.social{
+	li{
+		display: inline;
+	}
+}
+nav	ul, #articles{
+	@include grid-col(9, $cols, $gutterPercentage);
+}
+
+#sidebar{
+	@include grid-col(3, $cols, $gutterPercentage);
+	.follow,
+	.store,
+	#random-post{
+		img{
+			width: 100%;
+		}
+	}
+	#popular-posts{
+		li{
+			height: 100px;
+		}
+		img{
+			@include grid-col(5, $cols, $gutterPercentage);
+		}
+		.post-details{
+			@include grid-col(7, $cols, $gutterPercentage);	
+		}
+	}
+}
+
+#latest-posts{
+	.article{
+		@include grid-col(6, $cols, $gutterPercentage);
+		height: 500px;
+	}
+}
+
+footer{
+	@include bottom-footer($footerHeight);
+}
+

@@ -1,0 +1,181 @@
+/* 
+  Reset
+  http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, #banner, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, #banner, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Clearfix */
+/*box-sizing*/
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  /*height: 100%;*/ }
+
+/*@import 'vendors/susy';*/
+/*comment this out if you do not want red border markers*/
+/*red borders on everything*/
+* {
+  border: 1px dotted red !important; }
+
+/*
+grid mixin
+please @include clearfix on the parent(row/container)
+*/
+/*variables*/
+/*footer*/
+body {
+  height: 100%; }
+
+#wrap {
+  width: 1120px;
+  margin: 0 auto; }
+
+header, #banner,
+#main {
+  width: 100%; }
+
+nav,
+#footer-nav {
+  /*For modern browsers*/
+  /*For IE 6/7 (trigger hasLayout)*/ }
+  nav:before, nav:after,
+  #footer-nav:before,
+  #footer-nav:after {
+    content: "";
+    display: table; }
+  nav:after,
+  #footer-nav:after {
+    clear: both; }
+  nav,
+  #footer-nav {
+    zoom: 1; }
+
+#articles,
+#latest-posts ul,
+#previous-posts ul {
+  /*For modern browsers*/
+  /*For IE 6/7 (trigger hasLayout)*/ }
+  #articles:before, #articles:after,
+  #latest-posts ul:before,
+  #latest-posts ul:after,
+  #previous-posts ul:before,
+  #previous-posts ul:after {
+    content: "";
+    display: table; }
+  #articles:after,
+  #latest-posts ul:after,
+  #previous-posts ul:after {
+    clear: both; }
+  #articles,
+  #latest-posts ul,
+  #previous-posts ul {
+    zoom: 1; }
+
+nav {
+  width: 100%; }
+  nav form {
+    width: 25%;
+    margin-right: 0;
+    float: left; }
+    nav form:last-child {
+      margin-right: 0; }
+  nav ul li {
+    display: inline-block; }
+
+.social li {
+  display: inline; }
+
+nav ul, #articles {
+  width: 75%;
+  margin-right: 0;
+  float: left; }
+  nav ul:last-child, #articles:last-child {
+    margin-right: 0; }
+
+#sidebar {
+  width: 25%;
+  margin-right: 0;
+  float: left; }
+  #sidebar:last-child {
+    margin-right: 0; }
+  #sidebar .follow img,
+  #sidebar .store img,
+  #sidebar #random-post img {
+    width: 100%; }
+  #sidebar #popular-posts li {
+    height: 100px; }
+  #sidebar #popular-posts img {
+    width: 41.66667%;
+    margin-right: 0;
+    float: left; }
+    #sidebar #popular-posts img:last-child {
+      margin-right: 0; }
+  #sidebar #popular-posts .post-details {
+    width: 58.33333%;
+    margin-right: 0;
+    float: left; }
+    #sidebar #popular-posts .post-details:last-child {
+      margin-right: 0; }
+
+#latest-posts .article {
+  width: 50%;
+  margin-right: 0;
+  float: left;
+  height: 500px; }
+  #latest-posts .article:last-child {
+    margin-right: 0; }
+
+footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 100px;
+  margin-top: -100px; }
+
+/*# sourceMappingURL=main.css.map */

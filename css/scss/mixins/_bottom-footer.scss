@@ -1,0 +1,10 @@
+body{
+	/*height: 100%;*/
+}
+@mixin bottom-footer($footerHeight){
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: $footerHeight;
+    margin-top: -$footerHeight;
+}

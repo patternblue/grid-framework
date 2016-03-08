@@ -1,0 +1,12 @@
+/*
+grid mixin
+please @include clearfix on the parent(row/container)
+*/
+@mixin grid-col($i, $cols, $gutterPercentage) {
+	width: ((100% - $gutterPercentage * ($cols - 1)) / $cols) * $i + $gutterPercentage * ($i - 1);;
+	margin-right: $gutterPercentage;
+	float: left;
+	&:last-child {
+		margin-right: 0;
+	}
+}
