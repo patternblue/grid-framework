@@ -5,23 +5,107 @@
 /*@import 'vendors/susy';*/
 
 /*comment this out if you do not want red border markers*/
-@import 'modules/red-borders';
-
+/*@import 'modules/red-borders';*/
+@import 'mixins/vertical-align';
 @import 'mixins/grid';
+@import 'mixins/dropdown-menu';
+
 
 /*variables*/
+
+/*responsiveness:*/
+$breakSmall: 720px;
+
 $span: 3;
 $cols: 12;
-$gutterPercentage: 0;
+$gutterPercentage: 2%;
 /*footer*/
-$footerHeight: 100px;
+$footerHeight: 50px;
+
+/*font*/
+$black: #444;
+$blue: #0090e0;
+$darkBlue: #06b;
+$gray: #777;
+$lightGray: #999;
+$orange: orange;
+$white: #fff;
+$defaultFont: helvetica;
+
+$borderBottomGray: solid $lightGray 2px;
+$margin: 15px;
+$bigPadding: 15px;
+$smallPadding: 10px;
+
+@mixin hover-background($color) {
+	&:hover{
+		background-color: darken($color, 10%);
+		transition: background-color 0.2s ease;
+	}
+}
+
+body{
+	font-family: $defaultFont;
+}
+/*reset anchor*/
+strong{
+	font-weight: bold;
+}
+a {
+    color: $blue;
+    text-decoration: none;
+    &:hover{
+		color: inherit; 
+		cursor: pointer; 
+    };
+}
+
+/*text styling*/
+p {
+	line-height: 1.5em;
+	padding: $smallPadding 0;
+}
+/*h1 styling*/
+h1{
+	font-size: 2.5em;
+	font-family: $defaultFont;
+	font-weight: bold;
+	padding: $smallPadding $smallPadding;
+	letter-spacing: 1px;
+	/*line-height: 1.5em;*/
+	/*margin-bottom: $margin;*/
+}
+/*h2 styling*/
+h2{
+	@extend h1;
+	font-size: 1.7em;
+}
+/*h3 styling*/
+.cat-heading{
+	border-bottom: solid 2px;
+}
+h3{
+	@extend h1;
+	color: $white;
+	font-size: 1.2em;	
+	display: inline-block;
+	padding: $smallPadding $smallPadding;
+}
+
+
 
 body{
 	height: 100%;
 }
 #wrap{
-	width: 1120px;
-	margin: 0 auto;
+	/*width: 1120px;*/
+	@media screen and (min-width: $breakSmall){
+		width: 83%;
+	}
+	@media screen and (max-width: $breakSmall){
+		width: 65%;
+	}
+	margin: 0 auto $footerHeight auto;
 }
 header,
 #main{
@@ -31,38 +115,125 @@ header,
 	@extend header;
 }
 
-nav,
-#footer-nav{
-	@include clearfix;
-}
-#articles,
-#latest-posts ul,
-#previous-posts ul{
-	@include clearfix;	
-}
+
+
 nav{
 	width: 100%;
-	form{
-		@include grid-col(3, $cols, $gutterPercentage);
-	}
-	ul{
-		li{
-			display: inline-block;
+	height: 50px;
+	background-color: $black;
+	/*@include dropdown-menu;*/
+	margin-bottom: $margin;
+	.nav-links{
+		@include dropdown-menu;
+		@include grid-col(8, $cols, $gutterPercentage);
+		@include vertical-align;
+		a{
+			color: $white;
 		}
 	}
-
-}
-.social{
-	li{
-		display: inline;
+	ul{
+		/*margin: auto 0;*/
+		background-color: inherit;
+		li{
+			background-color: inherit;
+			a{
+/*				&:hover{
+					background-color: darken($lightGray, 20%);
+				}*/
+				@include hover-background($lightGray);
+				padding: $smallPadding;
+				font-size: 17px;
+				font-weight: bold;
+			}
+			li{
+				padding: $smallPadding;
+			}
+		}
+	}
+	form{
+		@include vertical-align; 
+		@include grid-col(4, $cols, $gutterPercentage);
+		text-align: center;
+		height: 65%;
+		input{
+			/*display: block;*/
+			height: 100%;
+			width: 70%;
+			/*margin: 0 auto;*/
+		}
 	}
 }
-nav	ul, #articles{
-	@include grid-col(9, $cols, $gutterPercentage);
-}
 
+.social{
+	img{
+		height: 20px;
+	}
+	a{
+		color: $darkBlue;
+	}
+	li{
+		display: inline-block;
+		margin-right: $smallPadding;
+	}
+	/*padding: $smallPadding 0;*/
+	margin: $margin 0;
+}
+.article,
+.ad{
+	> img{
+		width: 100%;
+	}
+}
+#articles{
+	/*@include clearfix;*/
+	@media screen and (min-width: $breakSmall){
+		@include grid-col(8, $cols, $gutterPercentage);
+	}
+}
+#main-article{
+	> img{
+		width: 100%;
+	}
+	.social{
+		@extend .social;
+		padding: $bigPadding 0;
+		img{
+			height: 40px;
+			/*@include vertical-align;*/
+		}
+	}
+}
 #sidebar{
-	@include grid-col(3, $cols, $gutterPercentage);
+	@media screen and (min-width: $breakSmall){
+		@include grid-col(4, $cols, $gutterPercentage);
+	}
+	/*text-align: center;*/
+	#subscribe,
+	.follow{
+		text-align: center;
+	}
+	#subscribe{
+		font-size: 1em;
+		color: $white;
+		background-color: $orange;
+		padding: 0 $smallPadding $smallPadding $smallPadding;
+		input{
+			margin-bottom: $margin;
+		}
+		button{
+			color: inherit;
+			background-color: $darkBlue;
+		}
+		input,
+		button{
+			width: 100%;
+			font-size: 1em;
+			height: 30px;
+		}
+	}
+	.follow{
+		color: $darkBlue;
+	}
 	.follow,
 	.store,
 	#random-post{
@@ -71,26 +242,120 @@ nav	ul, #articles{
 		}
 	}
 	#popular-posts{
-		li{
-			height: 100px;
+		.cat-heading{
+			/*border-bottom: solid $orange 5px;*/
+			border-color: $orange;
+			h3{
+				background-color: $orange;
+			}
 		}
-		img{
-			@include grid-col(5, $cols, $gutterPercentage);
-		}
-		.post-details{
-			@include grid-col(7, $cols, $gutterPercentage);	
+		.article{
+			border-bottom: $borderBottomGray;
+			> img{
+				@include grid-col(4, $cols, $gutterPercentage);
+			}
+			.post-details{
+				@include grid-col(8, $cols, $gutterPercentage);	
+			}
 		}
 	}
 }
 
 #latest-posts{
+	/*@include clearfix;*/
+	.row{
+		margin-bottom: $margin;
+	}
 	.article{
 		@include grid-col(6, $cols, $gutterPercentage);
+		border-bottom: $borderBottomGray;
 		height: 500px;
+		p{
+			margin-bottom: $margin;
+		}
 	}
 }
 
+#latest-posts,
+#previous-posts{
+	.cat-heading{
+		margin-bottom: $margin;	
+		border-color: $blue;
+		h3{
+			background-color: $blue;
+		}
+	}
+}
+#previous-posts{
+	.article{
+		height: 100px;
+		> img:first-child{
+			@include grid-col(2, $cols, $gutterPercentage);
+		}
+		> a{
+			@include grid-col(6, $cols, $gutterPercentage);	
+			/*display: inline-block;*/
+			@include vertical-align;
+		}
+		.social{
+			@include grid-col(4, $cols, $gutterPercentage);		
+			@include vertical-align;
+		}
+	}
+	.archive-button{
+		float: right;
+/*		&:after{
+			clear: both;
+		};*/
+	}
+	#page-nav{
+		clear: both;
+		margin-bottom: $margin;
+	}
+	button{
+		/*clear: both;*/
+		color: $white;
+		background-color: $gray;
+		font-size: 1em;
+		padding: $bigPadding;
+	}
+}
+
+#previous-posts,
+#popular-posts{
+	.article{
+		@include hover-background($white);
+		padding: $smallPadding 0;
+	}
+}
+
+.ad{
+	margin-bottom: $margin;
+}
 footer{
-	@include bottom-footer($footerHeight);
+	height: $footerHeight;
+	text-align: center;
+	@include bottom-footer;
+	background-color: $black;
+	#footer-nav{
+		@include vertical-align;
+	}
+	a{
+		color: $gray;
+	}
+	li{
+		&:first-child{
+			@include grid-col(2, 5, $gutterPercentage);
+			text-align: center;
+		}
+		&:not(first-child){
+			@include grid-col(1, 5, $gutterPercentage);
+		}
+	}
+	.middle{
+		a{
+			display: block;
+		}
+	}
 }
 
