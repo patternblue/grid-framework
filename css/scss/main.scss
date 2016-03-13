@@ -9,20 +9,28 @@
 @import 'mixins/vertical-align';
 @import 'mixins/grid';
 @import 'mixins/dropdown-menu';
-
+@import 'mixins/respond-to';
 
 /*variables*/
 
-/*responsiveness:*/
+/*response size breakpoints*/
 $breakSmall: 720px;
+$breakLarge: 1120px;
 
-$span: 3;
+/*grid values*/
+$span1: 1;
+$span2: 2;
+$span3: 3;
+$span4: 4;
+$span6: 6;
+$span8: 8;
 $cols: 12;
 $gutterPercentage: 2%;
+
 /*footer*/
 $footerHeight: 50px;
 
-/*font*/
+/*colors*/
 $black: #444;
 $blue: #0090e0;
 $darkBlue: #06b;
@@ -30,12 +38,19 @@ $gray: #777;
 $lightGray: #999;
 $orange: orange;
 $white: #fff;
+
+/*font*/
 $defaultFont: helvetica;
 
+/*border*/
 $borderBottomGray: solid $lightGray 2px;
+
+/*margin and padding*/
 $margin: 15px;
 $bigPadding: 15px;
 $smallPadding: 10px;
+
+/*mixins*/
 
 @mixin hover-background($color) {
 	&:hover{
@@ -44,10 +59,8 @@ $smallPadding: 10px;
 	}
 }
 
-body{
-	font-family: $defaultFont;
-}
 /*reset anchor*/
+
 strong{
 	font-weight: bold;
 }
@@ -61,19 +74,19 @@ a {
 }
 
 /*text styling*/
+
 p {
 	line-height: 1.5em;
 	padding: $smallPadding 0;
 }
+
 /*h1 styling*/
 h1{
 	font-size: 2.5em;
 	font-family: $defaultFont;
 	font-weight: bold;
-	padding: $smallPadding $smallPadding;
+	padding: $smallPadding;
 	letter-spacing: 1px;
-	/*line-height: 1.5em;*/
-	/*margin-bottom: $margin;*/
 }
 /*h2 styling*/
 h2{
@@ -81,29 +94,57 @@ h2{
 	font-size: 1.7em;
 }
 /*h3 styling*/
-.cat-heading{
-	border-bottom: solid 2px;
-}
 h3{
 	@extend h1;
 	color: $white;
 	font-size: 1.2em;	
 	display: inline-block;
-	padding: $smallPadding $smallPadding;
+	padding: $smallPadding;
 }
 
+/*classes*/
 
+.cat-heading{
+	border-bottom: solid 2px;
+}
+.social{
+	img{
+		height: 20px;
+	}
+	a{
+		color: $darkBlue;
+	}
+	li{
+		display: inline-block;
+		margin-right: $smallPadding;
+	}
+	margin: $margin 0;
+}
+.ad{
+	margin-bottom: $margin;
+}
+.article,
+.ad{
+	> img{
+		width: 100%;
+	}
+}
+
+/*sections*/
 
 body{
+	font-family: $defaultFont;
 	height: 100%;
 }
 #wrap{
-	/*width: 1120px;*/
-	@media screen and (min-width: $breakSmall){
-		width: 83%;
+	@include respond-to-sm($breakSmall){
+		width: 480px;
 	}
-	@media screen and (max-width: $breakSmall){
-		width: 65%;
+	@include respond-to-md($breakSmall, $breakLarge){
+		width: 720px;
+	}
+	@include respond-to-lg($breakLarge){
+		width: 1120px;
 	}
 	margin: 0 auto $footerHeight auto;
 }
@@ -113,33 +154,36 @@ header,
 }
 #banner{
 	@extend header;
+	img{
+		@include respond-to-sm($breakSmall){
+			width: 100%;
+		} 
+	}
 }
-
-
 
 nav{
 	width: 100%;
 	height: 50px;
 	background-color: $black;
-	/*@include dropdown-menu;*/
 	margin-bottom: $margin;
 	.nav-links{
 		@include dropdown-menu;
-		@include grid-col(8, $cols, $gutterPercentage);
+		@include grid-col($span8, $cols, $gutterPercentage);
 		@include vertical-align;
 		a{
 			color: $white;
 		}
 	}
+	ul, form{
+		@include respond-to-sm($breakSmall){
+			display: none;		
+		}
+	} 
 	ul{
-		/*margin: auto 0;*/
 		background-color: inherit;
 		li{
 			background-color: inherit;
 			a{
-/*				&:hover{
-					background-color: darken($lightGray, 20%);
-				}*/
 				@include hover-background($lightGray);
 				padding: $smallPadding;
 				font-size: 17px;
@@ -152,42 +196,19 @@ nav{
 	}
 	form{
 		@include vertical-align; 
-		@include grid-col(4, $cols, $gutterPercentage);
+		@include grid-col($span4, $cols, $gutterPercentage);
 		text-align: center;
 		height: 65%;
 		input{
-			/*display: block;*/
 			height: 100%;
 			width: 70%;
-			/*margin: 0 auto;*/
 		}
 	}
 }
 
-.social{
-	img{
-		height: 20px;
-	}
-	a{
-		color: $darkBlue;
-	}
-	li{
-		display: inline-block;
-		margin-right: $smallPadding;
-	}
-	/*padding: $smallPadding 0;*/
-	margin: $margin 0;
-}
-.article,
-.ad{
-	> img{
-		width: 100%;
-	}
-}
 #articles{
-	/*@include clearfix;*/
-	@media screen and (min-width: $breakSmall){
-		@include grid-col(8, $cols, $gutterPercentage);
+	@include respond-to-md-lg($breakSmall){
+		@include grid-col($span8, $cols, $gutterPercentage);
 	}
 }
 #main-article{
@@ -199,15 +220,13 @@ nav{
 		padding: $bigPadding 0;
 		img{
 			height: 40px;
-			/*@include vertical-align;*/
 		}
 	}
 }
 #sidebar{
-	@media screen and (min-width: $breakSmall){
-		@include grid-col(4, $cols, $gutterPercentage);
+	@include respond-to-md-lg($breakSmall){
+		@include grid-col($span4, $cols, $gutterPercentage);
 	}
-	/*text-align: center;*/
 	#subscribe,
 	.follow{
 		text-align: center;
@@ -243,7 +262,6 @@ nav{
 	}
 	#popular-posts{
 		.cat-heading{
-			/*border-bottom: solid $orange 5px;*/
 			border-color: $orange;
 			h3{
 				background-color: $orange;
@@ -252,22 +270,21 @@ nav{
 		.article{
 			border-bottom: $borderBottomGray;
 			> img{
-				@include grid-col(4, $cols, $gutterPercentage);
+				@include grid-col($span4, $cols, $gutterPercentage);
 			}
 			.post-details{
-				@include grid-col(8, $cols, $gutterPercentage);	
+				@include grid-col($span8, $cols, $gutterPercentage);	
 			}
 		}
 	}
 }
 
 #latest-posts{
-	/*@include clearfix;*/
 	.row{
 		margin-bottom: $margin;
 	}
 	.article{
-		@include grid-col(6, $cols, $gutterPercentage);
+		@include grid-col($span6, $cols, $gutterPercentage);
 		border-bottom: $borderBottomGray;
 		height: 500px;
 		p{
@@ -275,7 +292,6 @@ nav{
 		}
 	}
 }
-
 #latest-posts,
 #previous-posts{
 	.cat-heading{
@@ -290,47 +306,37 @@ nav{
 	.article{
 		height: 100px;
 		> img:first-child{
-			@include grid-col(2, $cols, $gutterPercentage);
+			@include grid-col($span2, $cols, $gutterPercentage);
 		}
 		> a{
-			@include grid-col(6, $cols, $gutterPercentage);	
-			/*display: inline-block;*/
+			@include grid-col($span6, $cols, $gutterPercentage);	
 			@include vertical-align;
 		}
 		.social{
-			@include grid-col(4, $cols, $gutterPercentage);		
+			@include grid-col($span4, $cols, $gutterPercentage);		
 			@include vertical-align;
 		}
 	}
 	.archive-button{
 		float: right;
-/*		&:after{
-			clear: both;
-		};*/
 	}
 	#page-nav{
 		clear: both;
 		margin-bottom: $margin;
 	}
-	button{
-		/*clear: both;*/
-		color: $white;
-		background-color: $gray;
-		font-size: 1em;
-		padding: $bigPadding;
-	}
 }
-
 #previous-posts,
 #popular-posts{
 	.article{
 		@include hover-background($white);
 		padding: $smallPadding 0;
 	}
-}
-
-.ad{
-	margin-bottom: $margin;
+	button{
+		color: $white;
+		background-color: $gray;
+		font-size: 1em;
+		padding: $bigPadding;
+	}
 }
 footer{
 	height: $footerHeight;
@@ -338,18 +344,19 @@ footer{
 	@include bottom-footer;
 	background-color: $black;
 	#footer-nav{
-		@include vertical-align;
+		height: 90%;
+		margin: auto 0;
 	}
 	a{
 		color: $gray;
 	}
 	li{
 		&:first-child{
-			@include grid-col(2, 5, $gutterPercentage);
+			@include grid-col($span2, 5, $gutterPercentage);
 			text-align: center;
 		}
 		&:not(first-child){
-			@include grid-col(1, 5, $gutterPercentage);
+			@include grid-col($span1, 5, $gutterPercentage);
 		}
 	}
 	.middle{
